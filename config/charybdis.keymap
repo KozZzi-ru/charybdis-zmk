@@ -88,11 +88,6 @@
             bindings = <&kp PLUS>;
             key-positions = <18 19>;
         };
-
-        esc {
-            bindings = <&kp ESCAPE>;
-            key-positions = <0 1>;
-        };
     };
 
     keymap {
