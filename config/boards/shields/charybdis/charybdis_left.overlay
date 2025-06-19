@@ -23,9 +23,9 @@
 &pmw_listener {
 	status = "okay";
 
-	// Изменено: убрана глобальная инверсия осей, так как теперь управляется через конфиг
+	// Добавлено: глобальная инверсия осей и временное включение слоя 2 при активации трекбола
 	input-processors = <
-		// &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)  // Закомментировано - инверсия теперь в драйвере
+		&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
 		&zip_temp_layer 2 1000
 	>;
 
@@ -33,18 +33,23 @@
 	scroller {
 		layers = <3>;
 
-		// Оставлено: инверсия Y для правильного направления скролла
+		// Заменено: используем отдельную инверсию Y, масштабирование и преобразование в прокрутку
 		input-processors = <
 			&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
-			&zip_xy_scaler 1 5  // Оставлено значение 5 (скорость будет дополнительно регулироваться через конфиг)
+			&zip_xy_scaler 1 5  //было &zip_xy_scaler 1 10, но скорость прокрутки была высока
 			&zip_xy_to_scroll_mapper
 		>;
+
+		// input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) &zip_xy_scaler 1 10 &zip_xy_to_scroll_mapper>;
+		// Отключено: предыдущий вариант input-processors был нерабочим и заменён на актуальный выше
 	};
 
 	// default when layer 5 is active, the trackball will move more slowly
 	snipe {
 		layers = <4>;
-		// Убрана инверсия - теперь направление управляется драйвером
 		input-processors = <&zip_xy_scaler 1 3>;
 	};
+
+	// input-processors = <&zip_temp_layer 2 1000>;
+	// Отключено: дублировал основную строку input-processors выше, из-за чего та игнорировалась
 };
