@@ -36,7 +36,7 @@
 		// Уменьшаем скорость скролла (меняем только множитель)
 		input-processors = <
 			&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
-			&zip_xy_scaler 1 3  // Было 5 - уменьшили для замедления скролла
+			&zip_xy_scaler 32 32  // Было 3 - увеличили для замедления скролла
 			&zip_xy_to_scroll_mapper
 		>;
 	};
