@@ -124,27 +124,27 @@
 &trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans     &trans  &trans      &trans  &mo 4   &mo 3   &trans  &trans  &trans
 &trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &mkp RCLK  &mkp MCLK  &mkp LCLK  &none                       &trans  &trans  &trans
+&mo 4   &mkp RCLK  &mkp MCLK  &mkp LCLK  &none                       &trans  &trans  &trans
             >;
         };
 
         scroll {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&mo 4   &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans                      &trans  &trans  &trans
             >;
         };
 
         snipe_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans                      &trans  &trans  &trans
             >;
         };
 
