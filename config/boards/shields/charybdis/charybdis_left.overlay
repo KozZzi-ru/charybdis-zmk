@@ -61,24 +61,28 @@
         // === Масштабаторы по оси Y ===
         zip_y_1: zip_y_1 {
             compatible = "zmk,behavior-zip-xy-scaler";
+            #binding-cells = <0>;
             x-scale = <1>;
-            y-scale = <1>; // Базовая скорость по оси Y
+            y-scale = <1>; // Базовая скорость по Y
         };
 
         zip_y_3: zip_y_3 {
             compatible = "zmk,behavior-zip-xy-scaler";
+            #binding-cells = <0>;
             x-scale = <1>;
             y-scale = <3>; // Умеренное ускорение прокрутки по Y
         };
 
         zip_y_5: zip_y_5 {
             compatible = "zmk,behavior-zip-xy-scaler";
+            #binding-cells = <0>;
             x-scale = <1>;
             y-scale = <5>; // Сильное ускорение по Y
         };
 
         zip_y_8: zip_y_8 {
             compatible = "zmk,behavior-zip-xy-scaler";
+            #binding-cells = <0>;
             x-scale = <1>;
             y-scale = <8>; // Максимальная скорость по Y
         };
@@ -86,24 +90,28 @@
         // === Масштабаторы по оси X ===
         zip_x_1: zip_x_1 {
             compatible = "zmk,behavior-zip-xy-scaler";
+            #binding-cells = <0>;
             x-scale = <1>; // Базовая скорость по X
             y-scale = <1>;
         };
 
         zip_x_3: zip_x_3 {
             compatible = "zmk,behavior-zip-xy-scaler";
+            #binding-cells = <0>;
             x-scale = <3>; // Умеренное ускорение по X
             y-scale = <1>;
         };
 
         zip_x_5: zip_x_5 {
             compatible = "zmk,behavior-zip-xy-scaler";
+            #binding-cells = <0>;
             x-scale = <5>; // Сильное ускорение по X
             y-scale = <1>;
         };
 
         zip_x_8: zip_x_8 {
             compatible = "zmk,behavior-zip-xy-scaler";
+            #binding-cells = <0>;
             x-scale = <8>; // Максимальная скорость по X
             y-scale = <1>;
         };
