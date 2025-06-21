@@ -45,10 +45,10 @@
             flavor = "tap-preferred";
         };
         
-        // Поведения для регулировки чувствительности трекбола
+        // Поведения для регулировки чувствительности
         sns_sensitivity_inc_x: sns_sensitivity_inc_x {
             compatible = "zmk,behavior-sensor-inc";
-            sensor = <&sensitivity_x>; // Ссылка на сенсор из overlay
+            sensor = <&sensitivity_x>;
         };
         
         sns_sensitivity_dec_x: sns_sensitivity_dec_x {
