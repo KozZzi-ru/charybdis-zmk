@@ -211,8 +211,8 @@
 
         scroll {
             bindings = <
-&trans  &sns_sensitivity_dec_y  &sns_sensitivity_inc_y  &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  // Регулировка Y-оси (первый ряд, начиная со второй кнопки)
-&trans  &sns_sensitivity_dec_x  &sns_sensitivity_inc_x  &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  // Регулировка X-оси (второй ряд, начиная со второй кнопки)
+&trans  &sns_sensitivity_dec_y  &sns_sensitivity_inc_y  &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &sns_sensitivity_dec_x  &sns_sensitivity_inc_x  &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &mo 4   &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans                      &trans  &trans  &trans
