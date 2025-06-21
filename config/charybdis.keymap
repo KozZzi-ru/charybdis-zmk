@@ -44,27 +44,6 @@
             tapping-term-ms = <40>;
             flavor = "tap-preferred";
         };
-        
-        // Поведения для регулировки чувствительности
-        sns_sensitivity_inc_x: sns_sensitivity_inc_x {
-            compatible = "zmk,behavior-sensor-inc";
-            sensor = <&sensitivity_x>;
-        };
-        
-        sns_sensitivity_dec_x: sns_sensitivity_dec_x {
-            compatible = "zmk,behavior-sensor-dec";
-            sensor = <&sensitivity_x>;
-        };
-        
-        sns_sensitivity_inc_y: sns_sensitivity_inc_y {
-            compatible = "zmk,behavior-sensor-inc";
-            sensor = <&sensitivity_y>;
-        };
-        
-        sns_sensitivity_dec_y: sns_sensitivity_dec_y {
-            compatible = "zmk,behavior-sensor-dec";
-            sensor = <&sensitivity_y>;
-        };
     };
 
     combos {
@@ -211,8 +190,8 @@
 
         scroll {
             bindings = <
-&trans  &sns_sensitivity_dec_y  &sns_sensitivity_inc_y  &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &sns_sensitivity_dec_x  &sns_sensitivity_inc_x  &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &mo 4   &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans                      &trans  &trans  &trans
