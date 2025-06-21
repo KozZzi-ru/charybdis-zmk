@@ -10,61 +10,59 @@
 #include <dt-bindings/zmk/input_transform.h>
 
 &kscan0 {
-	col-gpios
-		= <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		;
+    col-gpios
+        = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        ;
 };
 
 &pmw_listener {
-	status = "okay";
+    status = "okay";
 
-	// Глобальная инверсия осей (оставляем как было)
-	input-processors = <
-		&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-		&zip_temp_layer 2 1000
-	>;
+    // Глобальная инверсия осей
+    input-processors = <
+        &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+        &zip_temp_layer 2 1000
+    >;
 
-	// Режим скролла
-	scroller {
-		layers = <3>;
+    // Режим скролла
+    scroller {
+        layers = <3>;
 
-		// Добавляем сенсоры для регулировки чувствительности по осям X и Y
-		sensitivity_x: sensitivity_x {
-			compatible = "zmk,sensor-sensitivity";
-			label = "TRACKBALL_SENSITIVITY_X";
-			base-value = <1>;   // Базовая чувствительность по X
-			step = <1>;         // Шаг изменения
-			max-value = <10>;   // Максимальная чувствительность
-		};
-		
-		sensitivity_y: sensitivity_y {
-			compatible = "zmk,sensor-sensitivity";
-			label = "TRACKBALL_SENSITIVITY_Y";
-			base-value = <3>;   // Базовая чувствительность по Y (как в оригинале)
-			step = <1>;         // Шаг изменения
-			max-value = <10>;   // Максимальная чувствительность
-		};
+        // Сенсоры для регулировки чувствительности
+        sensitivity_x: sensitivity_x {
+            compatible = "zmk,sensor-sensitivity";
+            label = "TRACKBALL_SENSITIVITY_X";
+            base-value = <1>;
+            step = <1>;
+            max-value = <10>;
+        };
+        
+        sensitivity_y: sensitivity_y {
+            compatible = "zmk,sensor-sensitivity";
+            label = "TRACKBALL_SENSITIVITY_Y";
+            base-value = <3>;
+            step = <1>;
+            max-value = <10>;
+        };
 
-		// Заменяем фиксированный скейлер на динамический, управляемый сенсорами
-		input-processors = <
-			&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
-			&xy_scaler_sensor &sensitivity_x &sensitivity_y // Регулируемый скейлер
-			&zip_xy_to_scroll_mapper
-		>;
-	};
+        input-processors = <
+            &zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
+            &zip_xy_scaler_sensor &sensitivity_x &sensitivity_y
+            &zip_xy_to_scroll_mapper
+        >;
+    };
 
-	// Sniper режим - исправляем инверсию
-	snipe {
-		layers = <4>;
-		// Добавляем инверсию для компенсации глобальной инверсии
-		input-processors = <
-			&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) // Добавлено
-			&zip_xy_scaler 1 3
-		>;
-	};
+    // Sniper режим
+    snipe {
+        layers = <4>;
+        input-processors = <
+            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+            &zip_xy_scaler 1 3
+        >;
+    };
 };
