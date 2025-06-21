@@ -9,45 +9,103 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
+// Настройки клавиатурной матрицы — переопределение колоночных GPIO
 &kscan0 {
-	col-gpios
-		= <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		;
+    col-gpios =
+        <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+      , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+      , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+      , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+      , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+      , <&pro_micro 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 };
 
+// Основной слушатель PMW3610 (трекбол)
 &pmw_listener {
-	status = "okay";
+    status = "okay";
 
-	// Глобальная инверсия осей (оставляем как было)
-	input-processors = <
-		&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-		&zip_temp_layer 2 1000
-	>;
+    // Глобальная инверсия осей (оставляем как было)
+    input-processors = <
+        &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+        &zip_temp_layer 2 1000
+    >;
 
-	// Режим скролла
-	scroller {
-		layers = <3>;
+    // Режим прокрутки (scroll layer = 3)
+    scroller {
+        layers = <3>;
 
-		// Уменьшаем скорость скролла (меняем только множитель)
-		input-processors = <
-			&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
-			&zip_xy_scaler 1 3 // Было 10, снижали до 3 - для замедления скролла
-			&zip_xy_to_scroll_mapper
-		>;
-	};
+        // Инвертируем только Y и задаём масштаб для скроллинга
+        input-processors = <
+            &zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
+            &zip_xy_scaler 1 3 // Было 10, снижали до 3 — замедление вертикального скролла
+            &zip_xy_to_scroll_mapper
+        >;
+    };
 
-	// Sniper режим - исправляем инверсию
-	snipe {
-		layers = <4>;
-		// Добавляем инверсию для компенсации глобальной инверсии
-		input-processors = <
-			&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) // Добавлено
-			&zip_xy_scaler 1 3
-		>;
-	};
+    // Режим "снайпер" (snipe layer = 4)
+    snipe {
+        layers = <4>;
+
+        // Добавляем обратную инверсию для компенсации глобальной
+        input-processors = <
+            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+            &zip_xy_scaler 1 3
+        >;
+    };
+};
+
+// === Добавленные поведения масштабирования для управления чувствительностью ===
+/ {
+    behaviors {
+
+        // === Масштабаторы по оси Y ===
+        zip_y_1: zip_y_1 {
+            compatible = "zmk,behavior-zip-xy-scaler";
+            x-scale = <1>;
+            y-scale = <1>; // Базовая скорость по оси Y
+        };
+
+        zip_y_3: zip_y_3 {
+            compatible = "zmk,behavior-zip-xy-scaler";
+            x-scale = <1>;
+            y-scale = <3>; // Умеренное ускорение прокрутки по Y
+        };
+
+        zip_y_5: zip_y_5 {
+            compatible = "zmk,behavior-zip-xy-scaler";
+            x-scale = <1>;
+            y-scale = <5>; // Сильное ускорение по Y
+        };
+
+        zip_y_8: zip_y_8 {
+            compatible = "zmk,behavior-zip-xy-scaler";
+            x-scale = <1>;
+            y-scale = <8>; // Максимальная скорость по Y
+        };
+
+        // === Масштабаторы по оси X ===
+        zip_x_1: zip_x_1 {
+            compatible = "zmk,behavior-zip-xy-scaler";
+            x-scale = <1>; // Базовая скорость по X
+            y-scale = <1>;
+        };
+
+        zip_x_3: zip_x_3 {
+            compatible = "zmk,behavior-zip-xy-scaler";
+            x-scale = <3>; // Умеренное ускорение по X
+            y-scale = <1>;
+        };
+
+        zip_x_5: zip_x_5 {
+            compatible = "zmk,behavior-zip-xy-scaler";
+            x-scale = <5>; // Сильное ускорение по X
+            y-scale = <1>;
+        };
+
+        zip_x_8: zip_x_8 {
+            compatible = "zmk,behavior-zip-xy-scaler";
+            x-scale = <8>; // Максимальная скорость по X
+            y-scale = <1>;
+        };
+    };
 };
