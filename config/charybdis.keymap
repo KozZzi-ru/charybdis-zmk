@@ -47,8 +47,25 @@
             label = "phrase_proshu";
             #binding-cells = <0>;
             bindings = 
-                <&macro_tap &kp P &kp R &kp O &kp S &kp H &kp U &kp SPACE>,
-                <&macro_tap &kp R &kp A &kp S &kp S &kp M &kp O &kp T &kp R &kp E &kp T &kp DOT>,
+                <&macro_press &kp LSHIFT>,
+                <&macro_tap &kp G>,
+                <&macro_release &kp LSHIFT>,
+                <&macro_tap &kp H>,
+                <&macro_tap &kp J>,
+                <&macro_tap &kp I>,
+                <&macro_tap &kp E>,
+                <&macro_tap &kp SPACE>,
+                <&macro_tap &kp H>,
+                <&macro_tap &kp F>,
+                <&macro_tap &kp C>,
+                <&macro_tap &kp C>,
+                <&macro_tap &kp V>,
+                <&macro_tap &kp J>,
+                <&macro_tap &kp N>,
+                <&macro_tap &kp H>,
+                <&macro_tap &kp T>,
+                <&macro_tap &kp N>,
+                <&macro_tap &kp M>,
                 <&macro_press &kp LCTRL>,
                 <&macro_tap &kp ENTER>,
                 <&macro_release &kp LCTRL>;
