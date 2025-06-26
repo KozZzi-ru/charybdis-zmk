@@ -66,7 +66,6 @@
                 <&macro_tap &kp T>,
                 <&macro_tap &kp N>,
                 <&macro_tap &kp M>,
-                <&macro_tap &kp DOT>,
                 <&macro_press &kp LCTRL>,
                 <&macro_tap &kp ENTER>,
                 <&macro_release &kp LCTRL>;
@@ -77,19 +76,16 @@
             label = "phrase_spasibo";
             #binding-cells = <0>;
             bindings = 
-                // Заглавная "С"
                 <&macro_press &kp LSHIFT>,
                 <&macro_tap &kp C>,
                 <&macro_release &kp LSHIFT>,
-                // "пасибо!"
-                <&macro_tap &kp G>,  // п
-                <&macro_tap &kp F>,  // а
-                <&macro_tap &kp C>,  // с
-                <&macro_tap &kp B>,  // и
-                <&macro_tap &kp U>,  // б
-                <&macro_tap &kp J>,  // о
+                <&macro_tap &kp G>,
+                <&macro_tap &kp F>,
+                <&macro_tap &kp C>,
+                <&macro_tap &kp B>,
+                <&macro_tap &kp COMMA>,
+                <&macro_tap &kp J>,
                 <&macro_tap &kp EXCL>,
-                // Ctrl+Enter
                 <&macro_press &kp LCTRL>,
                 <&macro_tap &kp ENTER>,
                 <&macro_release &kp LCTRL>;
