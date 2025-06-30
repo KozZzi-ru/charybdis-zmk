@@ -47,32 +47,32 @@
             label = "phrase_proshu";
             #binding-cells = <0>;
             bindings = 
-                <&macro_press &kp LALT>
-                <&macro_press &kp LSHIFT>
-                <&macro_tap &kp N0>
-                <&macro_release &kp LSHIFT>
-                <&macro_release &kp LALT>
-                <&macro_press &kp LSHIFT>
-                <&macro_tap &kp G>
-                <&macro_release &kp LSHIFT>
-                <&macro_tap &kp H>
-                <&macro_tap &kp J>
-                <&macro_tap &kp I>
-                <&macro_tap &kp E>
-                <&macro_tap &kp SPACE>
-                <&macro_tap &kp H>
-                <&macro_tap &kp F>
-                <&macro_tap &kp C>
-                <&macro_tap &kp C>
-                <&macro_tap &kp V>
-                <&macro_tap &kp J>
-                <&macro_tap &kp N>
-                <&macro_tap &kp H>
-                <&macro_tap &kp T>
-                <&macro_tap &kp N>
-                <&macro_tap &kp M>
-                <&macro_press &kp LCTRL>
-                <&macro_tap &kp ENTER>
+                <&macro_press &kp LALT>,
+                <&macro_press &kp LSHIFT>,
+                <&macro_tap &kp N0>,
+                <&macro_release &kp LSHIFT>,
+                <&macro_release &kp LALT>,
+                <&macro_press &kp LSHIFT>,
+                <&macro_tap &kp G>,
+                <&macro_release &kp LSHIFT>,
+                <&macro_tap &kp H>,
+                <&macro_tap &kp J>,
+                <&macro_tap &kp I>,
+                <&macro_tap &kp E>,
+                <&macro_tap &kp SPACE>,
+                <&macro_tap &kp H>,
+                <&macro_tap &kp F>,
+                <&macro_tap &kp C>,
+                <&macro_tap &kp C>,
+                <&macro_tap &kp V>,
+                <&macro_tap &kp J>,
+                <&macro_tap &kp N>,
+                <&macro_tap &kp H>,
+                <&macro_tap &kp T>,
+                <&macro_tap &kp N>,
+                <&macro_tap &kp M>,
+                <&macro_press &kp LCTRL>,
+                <&macro_tap &kp ENTER>,
                 <&macro_release &kp LCTRL>;
         };
         
@@ -81,23 +81,23 @@
             label = "phrase_spasibo";
             #binding-cells = <0>;
             bindings = 
-                <&macro_press &kp LALT>
-                <&macro_press &kp LSHIFT>
-                <&macro_tap &kp N0>
-                <&macro_release &kp LSHIFT>
-                <&macro_release &kp LALT>
-                <&macro_press &kp LSHIFT>
-                <&macro_tap &kp C>
-                <&macro_release &kp LSHIFT>
-                <&macro_tap &kp G>
-                <&macro_tap &kp F>
-                <&macro_tap &kp C>
-                <&macro_tap &kp B>
-                <&macro_tap &kp COMMA>
-                <&macro_tap &kp J>
-                <&macro_tap &kp EXCL>
-                <&macro_press &kp LCTRL>
-                <&macro_tap &kp ENTER>
+                <&macro_press &kp LALT>,
+                <&macro_press &kp LSHIFT>,
+                <&macro_tap &kp N0>,
+                <&macro_release &kp LSHIFT>,
+                <&macro_release &kp LALT>,
+                <&macro_press &kp LSHIFT>,
+                <&macro_tap &kp C>,
+                <&macro_release &kp LSHIFT>,
+                <&macro_tap &kp G>,
+                <&macro_tap &kp F>,
+                <&macro_tap &kp C>,
+                <&macro_tap &kp B>,
+                <&macro_tap &kp COMMA>,
+                <&macro_tap &kp J>,
+                <&macro_tap &kp EXCL>,
+                <&macro_press &kp LCTRL>,
+                <&macro_tap &kp ENTER>,
                 <&macro_release &kp LCTRL>;
         };
     };
