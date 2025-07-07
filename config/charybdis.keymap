@@ -50,58 +50,174 @@
             label = "phrase_proshu";
             #binding-cells = <0>;
             bindings =
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N0>, <&macro_tap &kp KP_N7>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N4>, <&macro_tap &kp KP_N0>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N3>, <&macro_tap &kp KP_N8>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N4>, <&macro_tap &kp KP_N8>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N4>, <&macro_tap &kp KP_N3>,
-                <&macro_release &kp LALT>,
-                <&macro_tap &kp SPACE>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N4>, <&macro_tap &kp KP_N0>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N4>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N4>, <&macro_tap &kp KP_N1>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N4>, <&macro_tap &kp KP_N1>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N3>, <&macro_tap &kp KP_N6>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N3>, <&macro_tap &kp KP_N8>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N4>, <&macro_tap &kp KP_N2>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N4>, <&macro_tap &kp KP_N0>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N5>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N4>, <&macro_tap &kp KP_N2>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N5>, <&macro_tap &kp KP_N2>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LCTRL>,
-                <&macro_tap &kp ENTER>,
-                <&macro_release &kp LCTRL>;
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N0>,
+                <&macro_tap>,
+                <&kp KP_N7>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N4>,
+                <&macro_tap>,
+                <&kp KP_N0>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N3>,
+                <&macro_tap>,
+                <&kp KP_N8>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N4>,
+                <&macro_tap>,
+                <&kp KP_N8>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N4>,
+                <&macro_tap>,
+                <&kp KP_N3>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp SPACE>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N4>,
+                <&macro_tap>,
+                <&kp KP_N0>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N4>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N4>,
+                <&macro_tap>,
+                <&kp KP_N1>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N4>,
+                <&macro_tap>,
+                <&kp KP_N1>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N3>,
+                <&macro_tap>,
+                <&kp KP_N6>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N3>,
+                <&macro_tap>,
+                <&kp KP_N8>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N4>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N4>,
+                <&macro_tap>,
+                <&kp KP_N0>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N5>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N4>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N5>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp ENTER>,
+                <&macro_release>,
+                <&kp LCTRL>;
         };
 
         phrase_spasibo: phrase_spasibo {
@@ -109,33 +225,90 @@
             label = "phrase_spasibo";
             #binding-cells = <0>;
             bindings =
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N0>, <&macro_tap &kp KP_N9>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N3>, <&macro_tap &kp KP_N9>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N4>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N4>, <&macro_tap &kp KP_N1>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N3>, <&macro_tap &kp KP_N2>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N5>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N2>, <&macro_tap &kp KP_N3>, <&macro_tap &kp KP_N8>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N3>, <&macro_tap &kp KP_N3>,
-                <&macro_release &kp LALT>,
-                <&macro_press &kp LCTRL>,
-                <&macro_tap &kp ENTER>,
-                <&macro_release &kp LCTRL>;
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N0>,
+                <&macro_tap>,
+                <&kp KP_N9>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N3>,
+                <&macro_tap>,
+                <&kp KP_N9>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N4>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N4>,
+                <&macro_tap>,
+                <&kp KP_N1>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N3>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N5>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N2>,
+                <&macro_tap>,
+                <&kp KP_N3>,
+                <&macro_tap>,
+                <&kp KP_N8>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N3>,
+                <&macro_tap>,
+                <&kp KP_N3>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp ENTER>,
+                <&macro_release>,
+                <&kp LCTRL>;
         };
     };
 
@@ -150,11 +323,13 @@
         par {
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <31 32>;
+            require-prior-idle-ms = <100>;
         };
 
         par2 {
             bindings = <&kp LEFT_PARENTHESIS>;
             key-positions = <27 28>;
+            require-prior-idle-ms = <100>;
         };
 
         underscore {
@@ -195,41 +370,49 @@
         home {
             bindings = <&kp HOME>;
             key-positions = <10 22>;
+            layers = <1>;
         };
 
         end {
             bindings = <&kp END>;
             key-positions = <11 23>;
+            layers = <1>;
         };
 
         pg_up {
             bindings = <&kp PAGE_UP>;
             key-positions = <10 11>;
+            layers = <1>;
         };
 
         pg_dn {
             bindings = <&kp PAGE_DOWN>;
             key-positions = <22 23>;
+            layers = <1>;
         };
 
         ar_up {
             bindings = <&kp UP_ARROW>;
             key-positions = <34 35>;
+            layers = <1>;
         };
 
         ar_dn {
             bindings = <&kp DOWN_ARROW>;
             key-positions = <46 47>;
+            layers = <1>;
         };
 
         ar_lt {
             bindings = <&kp LEFT_ARROW>;
             key-positions = <34 46>;
+            layers = <1>;
         };
 
         al_rt {
             bindings = <&kp RIGHT_ARROW>;
             key-positions = <35 47>;
+            layers = <1>;
         };
 
         less {
