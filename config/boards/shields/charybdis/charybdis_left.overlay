@@ -31,9 +31,9 @@
 	scroller {
 		layers = <3>;
 
-		// Скролл без инверсии оси Y
+		
 		input-processors = <
-			// &zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
+			&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT) // Скролл для инверсии оси Y
 			&zip_xy_scaler 1 1 // Было 1 10, снижали до 1 1 - для замедления скролла
 			&zip_xy_to_scroll_mapper
 		>;
