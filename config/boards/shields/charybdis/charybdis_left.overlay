@@ -34,7 +34,7 @@
 		// Скролл без инверсии оси Y
 		input-processors = <
 			// &zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
-			&zip_xy_scaler 1 2 // Было 10, снижали до 3 - для замедления скролла
+			&zip_xy_scaler 10 10 // Было 10, снижали до 3 - для замедления скролла
 			&zip_xy_to_scroll_mapper
 		>;
 	};
