@@ -10,22 +10,20 @@
 #include <dt-bindings/zmk/input_transform.h>
 
 &kscan0 {
-	col-gpios
-		= <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		;
+	col-gpios = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		    , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		    , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		    , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		    , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		    , <&pro_micro 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 };
 
 &pmw_listener {
 	status = "okay";
 
-	// Глобальная инверсия осей (оставляем как было)
+	// Глобальные трансформации (исключена инверсия осей)
 	input-processors = <
-		&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+		// &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
 		&zip_temp_layer 2 1000
 	>;
 
@@ -33,20 +31,20 @@
 	scroller {
 		layers = <3>;
 
-		// Уменьшаем скорость скролла (меняем только множитель)
+		// Скролл без инверсии оси Y
 		input-processors = <
-			&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
+			// &zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
 			&zip_xy_scaler 1 2 // Было 10, снижали до 3 - для замедления скролла
 			&zip_xy_to_scroll_mapper
 		>;
 	};
 
-	// Sniper режим - исправляем инверсию
+	// Sniper режим — исключена компенсационная инверсия
 	snipe {
 		layers = <4>;
-		// Добавляем инверсию для компенсации глобальной инверсии
+
 		input-processors = <
-			&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) // Добавлено
+			// &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
 			&zip_xy_scaler 1 3
 		>;
 	};
