@@ -51,16 +51,6 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LALT>,
-                <&macro_press>,
-                <&kp LSHIFT>,
-                <&macro_tap>,
-                <&kp N0>,
-                <&macro_release>,
-                <&kp LSHIFT>,
-                <&macro_release>,
-                <&kp LALT>,
-                <&macro_press>,
                 <&kp LSHIFT>,
                 <&macro_tap>,
                 <&kp G>,
@@ -111,16 +101,6 @@
             label = "phrase_spasibo";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_press>,
-                <&kp LSHIFT>,
-                <&macro_tap>,
-                <&kp N0>,
-                <&macro_release>,
-                <&kp LSHIFT>,
-                <&macro_release>,
-                <&kp LALT>,
                 <&macro_press>,
                 <&kp LSHIFT>,
                 <&macro_tap>,
