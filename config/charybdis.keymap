@@ -290,7 +290,7 @@
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &lt 4   &trans  
+&trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &mo 4   &trans  
         &mkp RCLK  &mkp LCLK  &trans  &mkp MCLK  &trans         &trans  &trans  &trans
             >;
         };
@@ -300,7 +300,7 @@
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &lt 4   &trans  
+&trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &mo 4   &trans  
         &mkp RCLK  &mkp LCLK  &trans  &mkp MCLK  &trans         &trans  &trans  &trans
             >;
         };
