@@ -9,3 +9,30 @@ on:
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+
+  rename-and-upload:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download original firmware
+        uses: actions/download-artifact@v4
+        with:
+          name: firmware
+          path: firmware-temp
+
+      - name: Rename and prepare firmware
+        run: |
+          mkdir -p firmware-bw
+          if [ -f firmware-temp/firmware.zip ]; then
+            cp firmware-temp/firmware.zip firmware-bw/firmware_bw.zip
+          else
+            # Fallback if structure is different
+            find firmware-temp -name "*.zip" -exec cp {} firmware-bw/firmware_bw.zip \;
+          fi
+
+      - name: Upload renamed firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: firmware_bw
+          path: firmware-bw/firmware_bw.zip
+          retention-days: 30
