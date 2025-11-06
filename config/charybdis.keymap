@@ -185,7 +185,7 @@
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &mo 4   &trans  
-        &mkp RCLK  &mkp LCLK  &trans  &mkp MCLK  &trans         &trans  &trans  &trans  &trans  &trans
+        &mkp MCLK  &mkp RCLK  &trans  &mkp LCLK  &trans         &trans  &trans  &trans  &trans  &trans
             >; };
 
         scroll { bindings = <
@@ -193,7 +193,7 @@
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &mo 4   &trans  
-        &mkp RCLK  &mkp LCLK  &trans  &mkp MCLK  &trans         &trans  &trans  &trans  &trans  &trans
+        &mkp MCLK  &mkp RCLK  &trans  &mkp LCLK  &trans         &trans  &trans  &trans  &trans  &trans
             >; };
 
         snipe_layer { bindings = <
@@ -201,7 +201,7 @@
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans  
-        &mkp RCLK  &mkp LCLK  &trans  &mkp MCLK  &trans         &trans  &trans  &trans  &trans  &trans
+        &mkp MCLK  &mkp RCLK  &trans  &mkp LCLK  &trans         &trans  &trans  &trans  &trans  &trans
             >; };
 
         corrections { bindings = <
