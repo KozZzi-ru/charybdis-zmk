@@ -184,7 +184,7 @@
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans  
+&trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &tog 4
         &mkp MCLK  &mkp RCLK  &trans  &mkp LCLK  &trans         &trans  &trans  &trans  &trans  &trans
             >; };
 
@@ -192,7 +192,7 @@
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans 
+&trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &tog 4
         &mkp MCLK  &mkp RCLK  &trans  &mkp LCLK  &trans         &trans  &trans  &trans  &trans  &trans
             >; };
 
