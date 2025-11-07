@@ -21,22 +21,23 @@
 &pmw_listener {
 	status = "okay";
 
-	// Global inversion ONLY for Y axis
+	// Глобальная инверсия осей для движения курсора
 	input-processors = <
-		&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
+		&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
 		&zip_temp_layer 2 1000
 	>;
 
-	// Scroll mode override: no inversion (native axes)
+	// Scroll mode — только Y инверсия, X не меняем чтобы прокрутка вправо была вправо
 	scroller {
 		layers = <3>;
 		input-processors = <
+			&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
 			&zip_xy_scaler 1 10
 			&zip_xy_to_scroll_mapper
 		>;
 	};
 
-	// Sniper mode - precise cursor control
+	// Sniper режим
 	snipe {
 		layers = <4>;
 		input-processors = <
