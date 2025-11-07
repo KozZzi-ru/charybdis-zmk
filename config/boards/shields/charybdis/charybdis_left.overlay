@@ -21,30 +21,31 @@
 &pmw_listener {
 	status = "okay";
 
-	// Глобальные трансформации (исключена инверсия осей)
+	// Global axis inversion (single source of truth)
+	// This replaces CONFIG_PMW3610_INVERT_X/Y to prevent duplicate inversion
 	input-processors = <
-		// &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+		&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
 		&zip_temp_layer 2 1000
 	>;
 
-	// Режим скролла
+	// Scroll mode
 	scroller {
 		layers = <3>;
 
-		
+		// No additional inversion needed - already handled globally
+		// Increased scaler divisor from 1 to 15 for slower, smoother scrolling
 		input-processors = <
-			&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT) // Скролл для инверсии оси Y
-			&zip_xy_scaler 1 1 // Было 1 10, снижали до 1 1 - для замедления скролла
+			&zip_xy_scaler 1 15
 			&zip_xy_to_scroll_mapper
 		>;
 	};
 
-	// Sniper режим — исключена компенсационная инверсия
+	// Sniper mode - precise cursor control
 	snipe {
 		layers = <4>;
 
+		// No additional inversion needed - already handled globally
 		input-processors = <
-			// &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
 			&zip_xy_scaler 1 3
 		>;
 	};
