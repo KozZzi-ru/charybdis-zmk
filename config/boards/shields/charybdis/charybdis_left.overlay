@@ -10,38 +10,39 @@
 #include <dt-bindings/zmk/input_transform.h>
 
 &kscan0 {
-	col-gpios = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		    , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		    , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		    , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		    , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		    , <&pro_micro 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+    col-gpios = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                , <&pro_micro 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 };
 
 &pmw_listener {
-	status = "okay";
+    status = "okay";
 
-	// Глобальная инверсия для движения указателя
-	input-processors = <
-		&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-		&zip_temp_layer 2 1000
-	>;
+    // Глобальная инверсия X/Y — курсор всегда движется как нужно
+    input-processors = <
+        &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+        &zip_temp_layer 2 1000
+    >;
 
-	// Scroll: горизонтальная ось без инверсии, вертикальная — инвертирована (движение шара вниз — страница вниз)
-	scroller {
-		layers = <3>;
-		input-processors = <
-			&zip_xy_transform (INPUT_TRANSFORM_X_INVERT) // только X инверсия, чтобы вернуть стандартную (НЕ инвертировать Y)
-			&zip_xy_scaler 1 10
-			&zip_xy_to_scroll_mapper
-		>;
-	};
+    // Scroll: горизонтальная ось без инверсии; вертикальная прокрутка инвертирована (движение шара вниз — страница вниз)
+    scroller {
+        layers = <3>;
+        input-processors = <
+            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT) // только X, чтобы Y не инвертировался
+            &zip_xy_scaler 1 10                         // скорость чуть выше
+            &zip_scroll_scaler 2 1                      // плавность +100%
+            &zip_xy_to_scroll_mapper
+        >;
+    };
 
-	// Sniper режим
-	snipe {
-		layers = <4>;
-		input-processors = <
-			&zip_xy_scaler 1 3
-		>;
-	};
+    // Sniper режим — как обычный курсор, только чувствительней
+    snipe {
+        layers = <4>;
+        input-processors = <
+            &zip_xy_scaler 1 3   // ускорение, НЕТ transform, чтобы не было лишней инверсии
+        >;
+    };
 };
