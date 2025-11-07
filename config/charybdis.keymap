@@ -192,7 +192,7 @@
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &mo 4   &trans  
+&trans  &trans     &trans     &trans  &trans     &trans         &trans  &trans  &trans  &trans  &mo 2   &trans  
         &mkp MCLK  &mkp RCLK  &trans  &mkp LCLK  &trans         &trans  &trans  &trans  &trans  &trans
             >; };
 
