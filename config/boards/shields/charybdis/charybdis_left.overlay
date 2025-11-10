@@ -33,7 +33,7 @@
         input-processors = <
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT) // только X, чтобы Y не инвертировался
             &zip_xy_scaler 1 10                         // скорость чуть выше
-            &zip_scroll_scaler 2 1                      // плавность +100%
+            &zip_scroll_scaler 3 2                      // плавность
             &zip_xy_to_scroll_mapper
         >;
     };
