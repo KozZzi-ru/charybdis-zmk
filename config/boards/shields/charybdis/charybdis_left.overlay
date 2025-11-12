@@ -21,29 +21,31 @@
 &pmw_listener {
     status = "okay";
 
-    // Глобальная инверсия X/Y — курсор всегда движется как нужно
+    // Базовый слой: без инверсий (было 2× с CONFIG, теперь 0× = без инверсии)
+    // Сохраняет текущее поведение: X и Y без инверсии
     input-processors = <
-        &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-        &zip_temp_layer 3 1000
+        &zip_temp_layer 3 2000  // увеличен timeout для стабильности
     >;
 
-    // Scroll: горизонтальная ось без инверсии; вертикальная прокрутка инвертирована (движение шара вниз — страница вниз)
+    // Scroll слой: только Y инвертирован (было: CONFIG=1× Y + OVERLAY=1× X = 2× X и 1× Y)
+    // Теперь: только OVERLAY=1× Y = 0× X и 1× Y
+    // Сохраняет текущее поведение: X без инверсии, Y инвертирован
     scroller {
         layers = <3>;
         input-processors = <
-            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT) // только X, чтобы Y не инвертировался
-            &zip_xy_scaler 1 10                         // скорость чуть выше
-            &zip_scroll_scaler 2 1                      // плавность +100%
+            &zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)  // изменено с X на Y
+            &zip_xy_scaler 1 10
+            &zip_scroll_scaler 2 1
             &zip_xy_to_scroll_mapper
         >;
     };
 
-    // Sniper режим — как обычный курсор, только чувствительней
+    // Snipe слой: без инверсий (было 2× с CONFIG, теперь 0× = без инверсии)
+    // Сохраняет текущее поведение: X и Y без инверсии
     snipe {
         layers = <4>;
         input-processors = <
-            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-            &zip_xy_scaler 1 1   // ускорение
+            &zip_xy_scaler 1 1  // убраны инверсии
         >;
     };
 };
