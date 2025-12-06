@@ -26,7 +26,6 @@
 
 - При движении трекбола: автоматически включается **scroll** на 1 секунду
 - Если зажать кнопку: включается **mouse** режим
-- Слой 4 (sniper) остаётся доступен через слой 4 (mouse)
 
 ---
 
@@ -47,5 +46,5 @@
 ---
 
 **Ссылки:**
-- [swap-trackball-layers](текущая ветка) - переключение слоёв
+- [swap-trackball-layers] - переключение слоёв
 - [fix-scroll-smooth](https://github.com/KozZzi-ru/charybdis-zmk/tree/fix-scroll-smooth) - базовая ветка
